@@ -3,9 +3,9 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/authModel/userModel'); 
 require('dotenv').config();
 
-const FACEBOOK_CLIENT_ID = process.env.FACEBOOK_APP_ID;
-const FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_APP_SECRET;
-const FACEBOOK_REDIRECT_URI = process.env.FACEBOOK_REDIRECT_URI;
+const FACEBOOK_CLIENT_ID = process.env.FS_FACEBOOK_APP_ID;
+const FACEBOOK_CLIENT_SECRET = process.env.FS_FACEBOOK_APP_SECRET;
+const FACEBOOK_REDIRECT_URI = process.env.FS_FACEBOOK_REDIRECT_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 const redirectToFacebook = (req, res) => {

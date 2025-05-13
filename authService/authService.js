@@ -1,7 +1,7 @@
 const JWT = require("jsonwebtoken");
 function createTokenForUser(user) {
   try {
-    if (!process.env.JWT_SECRET) {
+    if (!process.env.FS_JWT_SECRET) {
       throw new Error("JWT_SECRET is missing in environment variables");
     }
     const payload = {
@@ -25,7 +25,7 @@ function createTokenForUser(user) {
 
 const validateToken = (token)=>{
   try {
-    const payload = JWT.verify(token, process.env.JWT_SECRET);
+    const payload = JWT.verify(token, process.env.FS_JWT_SECRET);
     return payload;
   } catch (error) {
     console.error("error validating token", error.message);

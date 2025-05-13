@@ -5,7 +5,7 @@ const sendOTP = async (phone, otp) => {
     const formattedPhone = phone.startsWith('+') ? phone : `+91${phone}`;
     const message = await client.messages.create({
       body: `Your verification OTP is ${otp}`,
-      from: process.env.TWILIO_PHONE_NUMBER,
+      from: process.env.FS_TWILIO_PHONE_NUMBER,
       to: formattedPhone,
     });
 

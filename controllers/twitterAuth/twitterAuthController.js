@@ -7,10 +7,10 @@ const User = require('../../models/authModel/userModel');
 
 require('dotenv').config();
 
-const TWITTER_API_KEY = process.env.TWITTER_CLIENT_ID;
-const TWITTER_API_SECRET_KEY = process.env.TWITTER_CLIENT_SECRET;
-const TWITTER_REDIRECT_URI = process.env.TWITTER_REDIRECT_URI;
-const JWT_SECRET = process.env.JWT_SECRET;
+const TWITTER_API_KEY = process.env.FS_TWITTER_CLIENT_ID;
+const TWITTER_API_SECRET_KEY = process.env.FS_TWITTER_CLIENT_SECRET;
+const TWITTER_REDIRECT_URI = process.env.FS_TWITTER_REDIRECT_URI;
+const JWT_SECRET = process.env.FS_JWT_SECRET;
 
 const tokenStore = {}; // In-memory store for oauth_token_secret (should use Redis or DB in production)
 

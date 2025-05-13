@@ -28,10 +28,10 @@ const facebookAuthRoute = require('./routes/facebookAuth/facebookAuthRoute');
 const twitterAuthRoute = require('./routes/twitterAuthRoute/twitterAuthRoute')
 
 const app = express();
-const PORT = process.env.BACKEND_PORT || 8001;
+const PORT = process.env.FS_BACKEND_PORT || 8001;
 
 const allowedOrigins = [
-  process.env.FRONTEND_URL_P,
+  process.env.FS_FRONTEND_URL_P,
   "http://localhost:3000",
 ];
 

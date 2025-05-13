@@ -3,10 +3,10 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/authModel/userModel'); 
 require('dotenv').config();
 
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
-const GOOGLE_REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI;
-const JWT_SECRET = process.env.JWT_SECRET;
+const GOOGLE_CLIENT_ID = process.env.FS_GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.FS_GOOGLE_CLIENT_SECRET;
+const GOOGLE_REDIRECT_URI = process.env.FS_GOOGLE_REDIRECT_URI;
+const JWT_SECRET = process.env.FS_JWT_SECRET;
 const qs = require('querystring');
 
 const redirectToGoogle = (req, res) => {
