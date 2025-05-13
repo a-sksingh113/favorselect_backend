@@ -10,6 +10,7 @@ require('dotenv').config();
 const TWITTER_API_KEY = process.env.FS_TWITTER_CLIENT_ID;
 const TWITTER_API_SECRET_KEY = process.env.FS_TWITTER_CLIENT_SECRET;
 const TWITTER_REDIRECT_URI = process.env.FS_TWITTER_REDIRECT_URI;
+const FS_FRONTEND_URL_P = process.env.FS_FRONTEND_URL_P;
 const JWT_SECRET = process.env.FS_JWT_SECRET;
 
 const tokenStore = {}; // In-memory store for oauth_token_secret (should use Redis or DB in production)
@@ -144,7 +145,7 @@ const twitterCallback = async (req, res) => {
 
     delete tokenStore[oauth_token];
 
-    res.redirect(`http://localhost:3000/?token=${token}`);
+    res.redirect(`${FS_FRONTEND_URL_P}/?token=${token}`);
   } catch (err) {
     console.error(' Error exchanging Twitter token:', err.response?.data || err.message);
     return res.status(500).json({ message: 'Error logging in with Twitter' });

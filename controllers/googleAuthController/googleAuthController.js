@@ -6,6 +6,7 @@ require('dotenv').config();
 const GOOGLE_CLIENT_ID = process.env.FS_GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.FS_GOOGLE_CLIENT_SECRET;
 const GOOGLE_REDIRECT_URI = process.env.FS_GOOGLE_REDIRECT_URI;
+const FS_FRONTEND_URL_P = process.env.FS_FRONTEND_URL_P;
 const JWT_SECRET = process.env.FS_JWT_SECRET;
 const qs = require('querystring');
 
@@ -69,7 +70,7 @@ const googleCallback = async (req, res) => {
       JWT_SECRET,
       { expiresIn: '1h' }
     );
-    res.redirect(`http://localhost:3000/?token=${token}`);  
+    res.redirect(`${FS_FRONTEND_URL_P}/?token=${token}`);  
 
   } catch (error) {
     console.error(error);

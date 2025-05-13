@@ -6,6 +6,7 @@ require('dotenv').config();
 const FACEBOOK_CLIENT_ID = process.env.FS_FACEBOOK_APP_ID;
 const FACEBOOK_CLIENT_SECRET = process.env.FS_FACEBOOK_APP_SECRET;
 const FACEBOOK_REDIRECT_URI = process.env.FS_FACEBOOK_REDIRECT_URI;
+const FS_FRONTEND_URL_P = process.env.FS_FRONTEND_URL_P;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 const redirectToFacebook = (req, res) => {
@@ -71,7 +72,7 @@ if (!user) {
       { expiresIn: '1h' }
     );
 
-    res.redirect(`http://localhost:3000/?token=${token}`);
+    res.redirect(`${FS_FRONTEND_URL_P}/?token=${token}`);
   } catch (error) {
     if (error.response?.data) {
       console.error("Facebook API Error:", error.response.data);
