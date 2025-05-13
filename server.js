@@ -20,6 +20,7 @@ const categoryRoute = require("./routes/categoryRoute/categoryRoute");
 const wislistRoute = require("./routes/wishlistRoute/wishlistRoute");
 const reviewRoute = require("./routes/reviewRoute/reviewRoute");
 const userAddressRoute = require("./routes/addressRoute/userAddressRoute");
+
 const orderRoute = require('./routes/orderRoute/orderRoute')
 const reviewLikeRoute = require('./routes/reviewLikeRoute/reviewLikeRoute')
 const googleAuthRoute = require('./routes/googleAuthRoute/googleAuthRoute');
@@ -27,7 +28,7 @@ const facebookAuthRoute = require('./routes/facebookAuth/facebookAuthRoute');
 const twitterAuthRoute = require('./routes/twitterAuthRoute/twitterAuthRoute')
 
 const app = express();
-const PORT = process.env.PORT || 8001;
+const PORT = process.env.BACKEND_PORT || 8001;
 
 const allowedOrigins = [
   process.env.FRONTEND_URL_P,
